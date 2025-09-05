@@ -1,0 +1,43 @@
+/* Large screens */
+@media (min-width: 1200px) {
+  body { font-size: 17px; }
+
+  /* Use full width, but maintain sensible side padding */
+  main, .hero, #certificate { max-width: none; padding-left: clamp(16px, 5vw, 48px); padding-right: clamp(16px, 5vw, 48px); }
+
+  /* Header: place brand (logo + name) on first line, nav beneath */
+  header { display: grid; grid-template-columns: auto auto 1fr; align-items: center; row-gap: .5rem; padding-left: clamp(16px, 5vw, 48px); padding-right: clamp(16px, 5vw, 48px); }
+  header img, header span { grid-row: 1; }
+  header nav { grid-column: 1 / -1; grid-row: 2; width: 100%; margin-top: .5rem; }
+  header nav ul { justify-content: flex-start; }
+
+  /* Typography scale up slightly */
+  .hero { padding-top: 3rem; padding-bottom: 3rem; grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.75rem; }
+  main h1 { font-size: 2.25rem; }
+  section h2 { font-size: 1.75rem; }
+
+  /* Responsive, auto-fitting grids that use available width without squishing */
+  .card-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .courses { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+
+  /* Smooth scroll with highlight effect for hero buttons */
+  html { scroll-behavior: smooth; }
+
+  /* Target highlight animation */
+  @keyframes target-highlight {
+    0% { background-color: rgba(14, 124, 102, 0.3); }
+    100% { background-color: transparent; }
+  }
+
+  .target-highlight {
+    animation: target-highlight 1.5s ease-out;
+  }
+
+
+  /* Avoid image distortion and pixelation on wide layouts */
+  .info-card img { height: auto; aspect-ratio: 16 / 9; }
+}
+
+

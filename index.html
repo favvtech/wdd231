@@ -2,11 +2,133 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nigeria Travel & Tourism Chamber | TravelAll</title>
+    <meta name="description" content="Discover travel and tourism locations across Nigeria: destinations, events, and local businesses. Plan your next journey with confidence." />
+    <meta name="author" content="Favour Igein" />
+    <meta name="keywords" content="Nigeria travel, tourism, destinations, cultural events, travel services, local businesses" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://travelall-nigeria.com/" />
+    <link rel="icon" type="image/svg+xml" href="images/plane-departure.svg" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://travelall-nigeria.com/" />
+    <meta property="og:title" content="Nigeria Travel & Tourism Chamber | TravelAll" />
+    <meta property="og:description" content="Discover travel and tourism locations across Nigeria: destinations, events, and local businesses. Plan your next journey with confidence." />
+    <meta property="og:image" content="https://travelall-nigeria.com/images/Yankari.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://travelall-nigeria.com/" />
+    <meta property="twitter:title" content="Nigeria Travel & Tourism Chamber | TravelAll" />
+    <meta property="twitter:description" content="Discover travel and tourism locations across Nigeria: destinations, events, and local businesses. Plan your next journey with confidence." />
+    <meta property="twitter:image" content="https://travelall-nigeria.com/images/Yankari.jpg" />
+    
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fraunces:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 1200px)" />
+    <script defer src="scripts/course-list-array.js"></script>
+    <script defer src="scripts/main.js"></script>
   </head>
   <body>
-    <h1>WDD131 - Favv</h1>
-    <nav></nav>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <header>
+      <div class="brand">
+        <img src="images/plane-departure.svg" alt="TravelAll logo" />
+        <span>TravelAll</span>
+      </div>
+      <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">&#9776;</button>
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Chamber</a></li>
+          <li><a href="#">Final</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Discover Nigeria with TravelAll</h1>
+        <p>Explore breathtaking destinations, vibrant cultural events, and trusted local businesses across Nigeria. Plan your next journey with confidence.</p>
+        <div class="actions">
+          <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+          <a href="#businesses" class="btn btn-outline">Book us</a>
+        </div>
+      </div>
+    </section>
+
+    <main id="home">
+      <h1>Home</h1>
+      <section id="destinations" aria-labelledby="destinations-title">
+        <h2 id="destinations-title">Top Destinations in Nigeria</h2>
+        <div class="card-grid">
+          <article class="info-card">
+            <img src="images/Yankari.jpg" alt="Yankari National Park wildlife and landscape" loading="lazy" decoding="async" />
+            <div class="content">
+              <h3>Yankari National Park</h3>
+              <p>Wildlife, warm springs, and unforgettable safari experiences in Bauchi State.</p>
+              <a href="#" class="btn btn-outline">Learn more</a>
+            </div>
+          </article>
+          <article class="info-card">
+            <img src="images/Vacation.jpg" alt="Beautiful vacation destination in Nigeria" loading="lazy" decoding="async" />
+            <div class="content">
+              <h3>Tarkwa Bay, Lagos</h3>
+              <p>Relaxing beaches and water sports accessible by boat—perfect weekend getaway.</p>
+              <a href="#" class="btn btn-outline">Learn more</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="businesses" aria-labelledby="businesses-title">
+        <h2 id="businesses-title">Travel Services & Local Businesses</h2>
+        <div class="card-grid">
+          <article class="info-card">
+            <img src="images/bookings.jpg" alt="Travel services and tour guides" loading="lazy" decoding="async" />
+            <div class="content">
+              <h3>Certified Tour Guides</h3>
+              <p>Find vetted guides for custom city tours and adventure trips nationwide.</p>
+              <a href="#" class="btn btn-outline">Find guides</a>
+            </div>
+          </article>
+          <article class="info-card">
+            <img src="images/travels.jpg" alt="Flight and hotel booking services" loading="lazy" decoding="async" />
+            <div class="content">
+              <h3>Flight & Hotel Deals</h3>
+              <p>Compare prices from top providers and book with confidence.</p>
+              <a href="#" class="btn btn-outline">Browse deals</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section id="certificate" aria-labelledby="certificate-title">
+      <h2 id="certificate-title">Web And Computer Programming Certificate</h2>
+      <div class="filters" role="group" aria-label="Course filters">
+        <button type="button" data-filter="ALL" aria-pressed="true">All Courses</button>
+        <button type="button" data-filter="WDD" aria-pressed="false">WDD Courses</button>
+        <button type="button" data-filter="CSE" aria-pressed="false">CSE Courses</button>
+      </div>
+      <div id="courses" class="courses" aria-live="polite" role="region" aria-label="Course list"></div>
+      <p id="total-credits" aria-live="polite"></p>
+    </section>
+
+    <footer id="contact">
+      <p>
+        <a href="https://github.com/favvtech/wdd231" aria-label="GitHub"><img src="images/github.svg" alt="GitHub" /></a>
+        <a href="https://www.linkedin.com/in/favour-igein-435715331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn" /></a>
+        <a href="#" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram" /></a>
+        <a href="#" aria-label="Twitter"><img src="images/twitter-x.svg" alt="Twitter" /></a>
+      </p>
+      <p>&copy; <span id="year"></span> Favour Igein, Nigeria.</p>
+      <p id="lastModified"></p>
+    </footer>
   </body>
 </html>
