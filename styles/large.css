@@ -15,16 +15,17 @@
   header nav a[aria-current="page"] { background: var(--color-primary); color: #fff; font-weight: 600; }
   #nav-toggle { display: none; }
 
-  /* Larger screens: two-column content layout to avoid single-column */
-  @media (min-width: 900px) {
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      align-items: start;
-    }
-    main > h1 { grid-column: 1 / -1; }
+  /* Layout from 768px and up: 3-column grid; About me spans two */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
   }
+  main > h1 { grid-column: 1 / -1; }
+  .about-me { grid-column: 1 / span 2; }
+  .student-photo { grid-column: auto; }
+  .about-me, .student-photo { height: 100%; }
 
   /* Typography scale up slightly */
   main h1 { font-size: 2.25rem; }
@@ -33,6 +34,23 @@
   /* Responsive, auto-fitting grids that use available width without squishing */
   .card-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
   .courses { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+  /* Certificate filters: horizontal row on larger screens */
+  #certificate .filters {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  #certificate .filters button {
+    width: 160px;
+  }
+
+  /* Center certificate heading only on large screens */
+  #certificate h2 { text-align: center; }
+
+  /* Keep certificate card away from viewport edges */
+  #certificate { margin-left: clamp(12px, 2vw, 24px); margin-right: clamp(12px, 2vw, 24px); }
 
 
   /* Smooth scroll with highlight effect for hero buttons */
