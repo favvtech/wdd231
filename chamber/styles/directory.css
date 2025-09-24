@@ -332,6 +332,23 @@
   }
 }
 
+/* Footer mobile: make social icons a visual separator */
+@media (max-width: 767px) {
+  footer .footer-grid {
+    display: block;
+  }
+  footer .footer-social {
+    margin: 12px 0;
+    padding: 12px 0;
+  }
+  footer .footer-social p {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+  }
+}
+
 /* Desktop view: 768px and above (header alignment and list centering) */
 @media (min-width: 768px) {
   .directory-header {
