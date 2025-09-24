@@ -89,6 +89,11 @@
   object-fit: cover;
   display: block;
 }
+
+/* Hide images in list view (applies to all breakpoints, incl. mobile) */
+#members.list .member-media {
+  display: none;
+}
 .members.list .member-header {
   margin-bottom: 0.25rem;
 }
