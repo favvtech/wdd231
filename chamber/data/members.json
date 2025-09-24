@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Naija Explore Tours",
+    "address": "12 Obafemi Awolowo Way, Ikeja, Lagos",
+    "phone": "+234 802 345",
+    "website": "https://naijaexplore.com",
+    "image": "naija_explore_logo.png",
+    "membership_level": 3,
+    "category": "Tour Operator",
+    "description": "Premium guided tours across Nigeria’s cultural and natural landmarks.",
+    "social_media": {
+      "instagram": "@naijaexplore",
+      "facebook": "fb.com/naijaexplore"
+    },
+    "business_hours": "Mon–Sat: 9am–6pm",
+    "established": 2015
+  },
+  {
+    "name": "Green Savannah Hotels",
+    "address": "Plot 5, GRA Phase 2, Port Harcourt",
+    "phone": "+234 803 456",
+    "website": "https://greensavannahhotels.ng",
+    "image": "green_savannah_icon.png",
+    "membership_level": 2,
+    "category": "Hotel & Lodging",
+    "description": "Eco-friendly hotel offering luxury stays near the Niger Delta.",
+    "social_media": {
+      "twitter": "@greensavannahPH"
+    },
+    "business_hours": "Open 24/7",
+    "established": 2012
+  },
+  {
+    "name": "Arewa Adventures",
+    "address": "Kano Road, Kaduna Central, Kaduna",
+    "phone": "+234 805 567",
+    "website": "https://arewaadventures.com",
+    "image": "arewa_adventures_logo.png",
+    "membership_level": 1,
+    "category": "Adventure Travel",
+    "description": "Northern Nigeria’s top destination for hiking, safaris, and cultural immersion.",
+    "social_media": {
+      "facebook": "fb.com/arewaadventures"
+    },
+    "business_hours": "Mon–Fri: 8am–5pm",
+    "established": 2018
+  },
+  {
+    "name": "Eko City Cruises",
+    "address": "Marina Waterfront, Victoria Island, Lagos",
+    "phone": "+234 806 678",
+    "website": "https://ekocitycruises.com",
+    "image": "eko_cruises_icon.png",
+    "membership_level": 3,
+    "category": "Water Tours",
+    "description": "Luxury boat cruises and private charters around Lagos Lagoon.",
+    "social_media": {
+      "instagram": "@ekocitycruises"
+    },
+    "business_hours": "Daily: 10am–8pm",
+    "established": 2016
+  },
+  {
+    "name": "Benin Heritage Walks",
+    "address": "Ring Road, Benin City, Edo State",
+    "phone": "+234 807 789",
+    "website": "https://beninheritagewalks.ng",
+    "image": "benin_walks_logo.png",
+    "membership_level": 2,
+    "category": "Cultural Tours",
+    "description": "Walking tours through Benin’s royal history and ancient architecture.",
+    "social_media": {
+      "facebook": "fb.com/beninheritagewalks"
+    },
+    "business_hours": "Tue–Sun: 9am–5pm",
+    "established": 2014
+  },
+  {
+    "name": "Calabar Carnival Connect",
+    "address": "Carnival Village, Calabar, Cross River",
+    "phone": "+234 808 890",
+    "website": "https://calabarcarnivalconnect.com",
+    "image": "calabar_carnival_icon.png",
+    "membership_level": 3,
+    "category": "Event Organizer",
+    "description": "Official partner for Calabar Carnival travel packages and logistics.",
+    "social_media": {
+      "instagram": "@calabarcarnivalconnect"
+    },
+    "business_hours": "Seasonal: Nov–Jan",
+    "established": 2010
+  },
+  {
+    "name": "Yankari Safari Lodge",
+    "address": "Yankari Game Reserve, Bauchi State",
+    "phone": "+234 809 901",
+    "website": "https://yankarisafari.ng",
+    "image": "yankari_safari_logo.png",
+    "membership_level": 1,
+    "category": "Wildlife & Nature",
+    "description": "Affordable lodging and wildlife tours in Nigeria’s premier game reserve.",
+    "social_media": {
+      "twitter": "@yankarisafari"
+    },
+    "business_hours": "Mon–Sun: 7am–7pm",
+    "established": 2008
+  }
+]
