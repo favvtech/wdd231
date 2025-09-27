@@ -377,3 +377,9 @@
 #directory #members {
   border-top: none;
 }
+
+/* Override main grid layout for chamber pages */
+main {
+  display: block !important;
+  grid-template-columns: none !important;
+}

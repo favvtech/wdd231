@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Test</title>
+  </head>
+  <body>
+    <h1>API Test</h1>
+    <div id="results"></div>
+
+    <script>
+      async function testAPI() {
+        const apiKey = "ff20cd3c9edcd5423d77d6d600dc9939";
+        const lagosUrl = `https://api.openweathermap.org/data/2.5/weather?lat=6.523469700646201&lon=3.3773211024396677&appid=${apiKey}&units=metric`;
+        const kadunaUrl = `https://api.openweathermap.org/data/2.5/weather?lat=10.504145731117323&lon=7.434603636941506&appid=${apiKey}&units=metric`;
+
+        const results = document.getElementById("results");
+
+        try {
+          console.log("Testing Lagos API...");
+          const lagosResponse = await fetch(lagosUrl);
+          console.log("Lagos response status:", lagosResponse.status);
+
+          if (lagosResponse.ok) {
+            const lagosData = await lagosResponse.json();
+            results.innerHTML += `<h2>Lagos Weather:</h2><pre>${JSON.stringify(
+              lagosData,
+              null,
+              2
+            )}</pre>`;
+          } else {
+            const errorText = await lagosResponse.text();
+            results.innerHTML += `<h2>Lagos Error:</h2><p>Status: ${lagosResponse.status}</p><p>Error: ${errorText}</p>`;
+          }
+
+          console.log("Testing Kaduna API...");
+          const kadunaResponse = await fetch(kadunaUrl);
+          console.log("Kaduna response status:", kadunaResponse.status);
+
+          if (kadunaResponse.ok) {
+            const kadunaData = await kadunaResponse.json();
+            results.innerHTML += `<h2>Kaduna Weather:</h2><pre>${JSON.stringify(
+              kadunaData,
+              null,
+              2
+            )}</pre>`;
+          } else {
+            const errorText = await kadunaResponse.text();
+            results.innerHTML += `<h2>Kaduna Error:</h2><p>Status: ${kadunaResponse.status}</p><p>Error: ${errorText}</p>`;
+          }
+        } catch (error) {
+          console.error("API Test Error:", error);
+          results.innerHTML += `<h2>Error:</h2><p>${error.message}</p>`;
+        }
+      }
+
+      testAPI();
+    </script>
+  </body>
+</html>
