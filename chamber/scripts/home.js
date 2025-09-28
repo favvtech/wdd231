@@ -18,7 +18,6 @@
   // Chamber locations with updated coordinates
   const CHAMBER_LOCATIONS = [
     { name: "Lagos", lat: 6.523469700646201, lon: 3.3773211024396677 },
-    { name: "Kaduna", lat: 10.504145731117323, lon: 7.434603636941506 },
   ];
 
   // Weather API Functions
@@ -153,16 +152,59 @@
         Rain: "Indoor activities recommended",
         Thunderstorm: "Stay indoors, tours may be delayed",
       },
-      Kaduna: {
-        Clear: "Ideal conditions for outdoor adventures",
-        Clouds: "Good weather for hiking and safaris",
-        Rain: "Adventure activities may be limited",
-        Thunderstorm: "Outdoor activities not recommended",
-      },
     };
     return (
       notes[location]?.[condition] || "Check local conditions for activities"
     );
+  }
+
+  function getCurrentDayName() {
+    const today = new Date();
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    return days[today.getDay()];
+  }
+
+  function createForecastCard() {
+    const today = getCurrentDayName();
+
+    // Generate forecast data (simulated for demo)
+    const forecastData = [
+      { day: today, temp: 28, icon: "02d" },
+      { day: "Wednesday", temp: 31, icon: "01d" },
+      { day: "Friday", temp: 26, icon: "10d" },
+    ];
+
+    return `
+      <div class="weather-card forecast-card">
+        <div class="weather-header">
+          <h3>3-Day Forecast</h3>
+          <div class="weather-icon">📅</div>
+        </div>
+        <div class="forecast-container">
+          ${forecastData
+            .map(
+              (day) => `
+            <div class="forecast-item">
+              <span class="forecast-day">${day.day}:</span>
+              <span class="forecast-temp"><strong>${day.temp}°C</strong></span>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+        <div class="weather-note">
+          <small>Weather conditions for Lagos area</small>
+        </div>
+      </div>
+    `;
   }
 
   async function loadWeatherData() {
@@ -174,12 +216,16 @@
 
     const weatherCards = [];
 
-    for (const location of CHAMBER_LOCATIONS) {
-      console.log(`Fetching weather for ${location.name}...`);
-      const weatherData = await apiFetch(location.lat, location.lon);
-      const cardHTML = createWeatherCard(location, weatherData);
-      weatherCards.push(cardHTML);
-    }
+    // Load Lagos weather
+    const lagosLocation = CHAMBER_LOCATIONS[0];
+    console.log(`Fetching weather for ${lagosLocation.name}...`);
+    const weatherData = await apiFetch(lagosLocation.lat, lagosLocation.lon);
+    const lagosCard = createWeatherCard(lagosLocation, weatherData);
+    weatherCards.push(lagosCard);
+
+    // Add 3-day forecast
+    const forecastCard = createForecastCard();
+    weatherCards.push(forecastCard);
 
     weatherGrid.innerHTML = weatherCards.join("");
     console.log("Weather data loaded");
