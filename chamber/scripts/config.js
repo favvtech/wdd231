@@ -8,12 +8,12 @@ window.ChamberConfig = {
   // Chamber locations for weather data
   CHAMBER_LOCATIONS: [
     { name: "Lagos", lat: 6.5244, lon: 3.3792, country: "NG" },
-    {
-      name: "Kaduna",
-      lat: 10.503386199375527,
-      lon: 7.434603636941506,
-      country: "NG",
-    },
+    // {
+    //   name: "Kaduna",
+    //   lat: 10.503386199375527,
+    //   lon: 7.434603636941506,
+    //   country: "NG",
+    // },
   ],
 
   // Members data URL

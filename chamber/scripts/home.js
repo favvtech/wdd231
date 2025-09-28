@@ -322,11 +322,20 @@
       const members = await fetchMembers();
       console.log("Total members fetched:", members.length);
 
-      // Filter for Gold and Silver members only
+      // Filter for Gold (level 3) and Silver (level 2) members only
       const eligibleMembers = members.filter(
-        (member) => Number(member.membership_level) >= 2
+        (member) =>
+          Number(member.membership_level) === 3 ||
+          Number(member.membership_level) === 2
       );
-      console.log("Eligible members (Gold/Silver):", eligibleMembers.length);
+      console.log(
+        "Eligible members (Gold/Silver only):",
+        eligibleMembers.length
+      );
+      console.log(
+        "Gold/Silver members:",
+        eligibleMembers.map((m) => `${m.name} (Level ${m.membership_level})`)
+      );
 
       if (eligibleMembers.length === 0) {
         spotlightsGrid.innerHTML =
@@ -334,19 +343,23 @@
         return;
       }
 
-      // Randomly select 2-3 members
+      // Randomly select 2-3 members (works for both mobile and desktop)
       const shuffledMembers = shuffleArray(eligibleMembers);
       const selectedMembers = shuffledMembers.slice(
         0,
         Math.min(3, eligibleMembers.length)
       );
       console.log("Selected members for spotlight:", selectedMembers.length);
+      console.log(
+        "Selected:",
+        selectedMembers.map((m) => `${m.name} (Level ${m.membership_level})`)
+      );
 
       const spotlightCards = selectedMembers.map((member) =>
         createSpotlightCard(member)
       );
       spotlightsGrid.innerHTML = spotlightCards.join("");
-      console.log("Member spotlights loaded");
+      console.log("Member spotlights loaded successfully");
     } catch (error) {
       console.error("Error loading member spotlights:", error);
       spotlightsGrid.innerHTML =
