@@ -95,6 +95,14 @@
   }
 
   /* Mobile join-chamber-btn styles now handled by .hero-image .join-chamber-btn */
+
+  /* Override directory.css footer styles for mobile home page */
+  footer .footer-grid {
+    max-width: none; /* Remove width constraint for mobile */
+    margin: 0; /* Remove auto margins */
+    width: 100%; /* Use full width */
+    padding: 0.5rem; /* Add some padding for content */
+  }
 }
 
 /* Ensure hero section touches header */
@@ -619,6 +627,14 @@ header {
     margin: 0; /* Remove auto margins */
     padding: 0.5rem; /* Much less padding for home page */
     width: 100%; /* Use full width */
+  }
+
+  /* Override directory.css footer styles for home page */
+  footer .footer-grid {
+    max-width: none; /* Remove width constraint for desktop */
+    margin: 0; /* Remove auto margins */
+    width: 100%; /* Use full width */
+    padding: 1rem; /* Add some padding for content */
   }
 }
 
