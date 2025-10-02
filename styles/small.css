@@ -423,11 +423,132 @@ a:focus-visible {
   }
 }
 
+/* Modal Dialog Styles */
+dialog {
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-md), 0 0 3rem #777;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+dialog button {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+dialog button:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-border);
+}
+
+dialog h2 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  padding-right: var(--space-10);
+}
+
+dialog h3 {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+dialog p {
+  margin: 0 0 var(--space-4);
+  line-height: 1.6;
+}
+
+dialog p:last-child {
+  margin-bottom: 0;
+}
+
+dialog strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Mobile responsive adjustments for dialog */
+@media (max-width: 767px) {
+  dialog {
+    width: 95%;
+    max-width: none;
+    padding: var(--space-4);
+    max-height: 85vh;
+  }
+
+  dialog button {
+    top: var(--space-4);
+    right: var(--space-4);
+    padding: var(--space-1) var(--space-3);
+    font-size: 1rem;
+  }
+
+  dialog h2 {
+    font-size: 1.25rem;
+    padding-right: var(--space-8);
+  }
+
+  dialog h3 {
+    font-size: 1.125rem;
+  }
+}
+
+/* Ensure course cards are clickable */
+.course-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.course-card:active {
+  transform: translateY(0);
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
+  }
+
+  .course-card:hover {
+    transform: none;
   }
 }
 
