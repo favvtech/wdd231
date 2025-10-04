@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Join | TravelAll Chamber of Commerce</title>
+    <meta
+      name="description"
+      content="Join TravelAll Chamber of Commerce - Connect with tourism businesses across Nigeria. Choose from NP, Bronze, Silver, or Gold membership levels."
+    />
+    <meta name="author" content="Favour Igein" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../images/plane-departure.svg"
+    />
+    <link rel="canonical" href="/chamber/join.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/small.css" />
+    <link rel="stylesheet" href="./styles/directory.css" />
+    <link rel="stylesheet" href="./styles/join.css" />
+    <link
+      rel="stylesheet"
+      href="../styles/large.css"
+      media="screen and (min-width: 768px)"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chamber of Commerce" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Join | TravelAll Chamber of Commerce" />
+    <meta
+      property="og:description"
+      content="Join TravelAll Chamber of Commerce - Connect with tourism businesses across Nigeria. Choose from NP, Bronze, Silver, or Gold membership levels."
+    />
+    <meta
+      property="og:image"
+      content="https://favvtech.github.io/wdd231/chamber/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Chamber of Commerce banner" />
+    <meta
+      property="og:url"
+      content="https://favvtech.github.io/wdd231/chamber/join.html"
+    />
+    <script defer src="../scripts/main.js"></script>
+    <script defer src="./scripts/config.js"></script>
+    <script defer src="./scripts/join.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+      <div class="brand">
+        <img src="../images/plane-departure.svg" alt="TravelAll logo" />
+        <span>TravelAll</span>
+      </div>
+      <button
+        id="nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        &#9776;
+      </button>
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
+          <li><a href="#">Discover</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <h1>Join Our Chamber</h1>
+
+        <div class="join-content">
+          <!-- Membership Application Form -->
+          <section class="membership-form-section">
+            <h2>Membership Application</h2>
+            <form method="get" action="thankyou.html" class="membership-form">
+              <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="firstName">
+                  First Name *
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    title="Enter your first name"
+                    autocomplete="given-name"
+                    required
+                  />
+                </label>
+
+                <label for="lastName">
+                  Last Name *
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    title="Enter your last name"
+                    autocomplete="family-name"
+                    required
+                  />
+                </label>
+
+                <label for="orgTitle">
+                  Organizational Title
+                  <input
+                    type="text"
+                    id="orgTitle"
+                    name="orgTitle"
+                    title="Enter your title within your organization"
+                    autocomplete="organization-title"
+                    pattern="[a-zA-Z\s\-]{7,}"
+                    minlength="7"
+                  />
+                </label>
+
+                <label for="email">
+                  Email Address *
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    title="Enter your email address"
+                    autocomplete="email"
+                    placeholder="example@company.com"
+                    required
+                  />
+                </label>
+
+                <label for="mobile">
+                  Mobile Phone *
+                  <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    title="Enter your mobile phone number"
+                    autocomplete="tel"
+                    required
+                  />
+                </label>
+
+                <label for="businessName">
+                  Business/Organization Name *
+                  <input
+                    type="text"
+                    id="businessName"
+                    name="businessName"
+                    title="Enter your business or organization name"
+                    autocomplete="organization"
+                    required
+                  />
+                </label>
+
+                <label for="membershipLevel">
+                  Membership Level *
+                  <select
+                    id="membershipLevel"
+                    name="membershipLevel"
+                    title="Select your preferred membership level"
+                    required
+                  >
+                    <option value="">Select Membership Level</option>
+                    <option value="NP">
+                      NP Membership (Non-Profit - No Fee)
+                    </option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                  </select>
+                </label>
+
+                <label for="businessDescription">
+                  Business/Organization Description
+                  <textarea
+                    id="businessDescription"
+                    name="businessDescription"
+                    title="Describe your business or organization"
+                    rows="4"
+                    placeholder="Tell us about your business, services, and how you contribute to the tourism industry..."
+                  ></textarea>
+                </label>
+
+                <input type="hidden" id="timestamp" name="timestamp" value="" />
+
+                <button type="submit" class="btn btn-primary">
+                  Submit Membership Application
+                </button>
+              </fieldset>
+            </form>
+          </section>
+
+          <!-- Membership Level Cards -->
+          <section class="membership-levels-section">
+            <h2>Membership Levels</h2>
+            <div class="membership-cards">
+              <article class="membership-card np-membership">
+                <h3>NP Membership</h3>
+                <p class="membership-price">No Fee</p>
+                <p class="membership-description">
+                  Perfect for non-profit organizations dedicated to promoting
+                  tourism and cultural heritage.
+                </p>
+                <a
+                  href="#np-benefits"
+                  class="learn-more-link"
+                  data-modal="np-benefits"
+                  >Learn More</a
+                >
+              </article>
+
+              <article class="membership-card bronze-membership">
+                <h3>Bronze Membership</h3>
+                <p class="membership-price">₦50,000/year</p>
+                <p class="membership-description">
+                  Entry-level membership with essential networking and
+                  promotional opportunities.
+                </p>
+                <a
+                  href="#bronze-benefits"
+                  class="learn-more-link"
+                  data-modal="bronze-benefits"
+                  >Learn More</a
+                >
+              </article>
+
+              <article class="membership-card silver-membership">
+                <h3>Silver Membership</h3>
+                <p class="membership-price">₦100,000/year</p>
+                <p class="membership-description">
+                  Enhanced benefits including priority event access and
+                  marketing support.
+                </p>
+                <a
+                  href="#silver-benefits"
+                  class="learn-more-link"
+                  data-modal="silver-benefits"
+                  >Learn More</a
+                >
+              </article>
+
+              <article class="membership-card gold-membership">
+                <h3>Gold Membership</h3>
+                <p class="membership-price">₦200,000/year</p>
+                <p class="membership-description">
+                  Premium membership with exclusive benefits and spotlight
+                  opportunities.
+                </p>
+                <a
+                  href="#gold-benefits"
+                  class="learn-more-link"
+                  data-modal="gold-benefits"
+                  >Learn More</a
+                >
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Membership Benefits Modals -->
+    <dialog id="np-benefits" class="membership-modal">
+      <button class="close-modal">❌</button>
+      <h2>NP Membership Benefits</h2>
+      <div class="modal-content">
+        <h3>Perfect for Non-Profit Organizations</h3>
+        <ul>
+          <li>Free membership for qualified non-profit organizations</li>
+          <li>Access to chamber networking events</li>
+          <li>Listing in chamber directory</li>
+          <li>Monthly newsletter subscription</li>
+          <li>Access to tourism industry resources</li>
+          <li>Participation in community outreach programs</li>
+          <li>Collaboration opportunities with other members</li>
+        </ul>
+        <p>
+          <strong>Eligibility:</strong> Must be a registered non-profit
+          organization focused on tourism, cultural heritage, or community
+          development.
+        </p>
+      </div>
+    </dialog>
+
+    <dialog id="bronze-benefits" class="membership-modal">
+      <button class="close-modal">❌</button>
+      <h2>Bronze Membership Benefits</h2>
+      <div class="modal-content">
+        <h3>Essential Business Networking</h3>
+        <ul>
+          <li>All NP membership benefits</li>
+          <li>Priority access to monthly networking events</li>
+          <li>Business listing with enhanced visibility</li>
+          <li>Access to member-only workshops</li>
+          <li>Quarterly business development seminars</li>
+          <li>Chamber certificate of membership</li>
+          <li>Social media promotion (1 post per month)</li>
+          <li>Access to member referral network</li>
+        </ul>
+        <p><strong>Investment:</strong> ₦50,000 per year</p>
+      </div>
+    </dialog>
+
+    <dialog id="silver-benefits" class="membership-modal">
+      <button class="close-modal">❌</button>
+      <h2>Silver Membership Benefits</h2>
+      <div class="modal-content">
+        <h3>Enhanced Marketing & Support</h3>
+        <ul>
+          <li>All Bronze membership benefits</li>
+          <li>Featured listing in chamber directory</li>
+          <li>Priority booth placement at chamber events</li>
+          <li>Monthly spotlight feature on website</li>
+          <li>Access to exclusive training programs</li>
+          <li>20% discount on chamber-sponsored events</li>
+          <li>Quarterly business consultation sessions</li>
+          <li>Social media promotion (2 posts per month)</li>
+          <li>Access to premium member resources</li>
+          <li>Invitation to VIP networking events</li>
+        </ul>
+        <p><strong>Investment:</strong> ₦100,000 per year</p>
+      </div>
+    </dialog>
+
+    <dialog id="gold-benefits" class="membership-modal">
+      <button class="close-modal">❌</button>
+      <h2>Gold Membership Benefits</h2>
+      <div class="modal-content">
+        <h3>Premium Membership Experience</h3>
+        <ul>
+          <li>All Silver membership benefits</li>
+          <li>Premium placement in chamber directory</li>
+          <li>Exclusive sponsorship opportunities</li>
+          <li>Weekly spotlight feature on homepage</li>
+          <li>Access to all chamber events (free admission)</li>
+          <li>Personal business development consultant</li>
+          <li>Quarterly strategic planning sessions</li>
+          <li>Social media promotion (weekly posts)</li>
+          <li>Access to exclusive member-only events</li>
+          <li>Priority support for business inquiries</li>
+          <li>Custom marketing materials development</li>
+          <li>Annual business review and recommendations</li>
+        </ul>
+        <p><strong>Investment:</strong> ₦200,000 per year</p>
+      </div>
+    </dialog>
+
+    <footer id="contact">
+      <div class="footer-grid">
+        <div class="footer-details">
+          <p><strong>TravelAll Chamber Of Commerce</strong></p>
+          <address>
+            <p>123 Chamber Way</p>
+            <p>Abuja, Nigeria</p>
+          </address>
+          <p><a href="#">Info@About Us</a></p>
+          <p><a href="tel:+2347026499743">+234 702 649 9743</a></p>
+        </div>
+
+        <div class="footer-social">
+          <p>
+            <a
+              href="https://github.com/favvtech/wdd231"
+              aria-label="GitHub profile"
+              ><img src="../images/github.svg" alt="GitHub logo icon"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/favour-igein-435715331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              aria-label="LinkedIn"
+              ><img src="../images/linkedin.svg" alt="LinkedIn"
+            /></a>
+            <a href="#" aria-label="Instagram"
+              ><img src="../images/instagram.svg" alt="Instagram"
+            /></a>
+            <a href="#" aria-label="Twitter"
+              ><img src="../images/twitter-x.svg" alt="Twitter"
+            /></a>
+          </p>
+        </div>
+
+        <div class="footer-meta">
+          <p>WDD231 Class Project</p>
+          <p>&copy; <span id="year"></span> ● Favour Igein ● Nigeria.</p>
+          <p id="lastModified"></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
