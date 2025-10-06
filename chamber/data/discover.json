@@ -1,0 +1,60 @@
+{
+  "discoverItems": [
+    {
+      "id": "culture",
+      "name": "Nigerian Cultural Heritage",
+      "image": "culture.webp",
+      "address": "National Museum Lagos, Lagos State, Nigeria",
+      "description": "Immerse yourself in Nigeria's rich cultural tapestry. From traditional Yoruba art to Igbo masquerades and Hausa architecture, discover the diverse cultural expressions that define Nigeria's identity. Experience live performances, traditional crafts, and cultural festivals that showcase the nation's heritage."
+    },
+    {
+      "id": "dishes",
+      "name": "Authentic Nigerian Cuisine",
+      "image": "dishes.webp",
+      "address": "Bukka Hut Restaurant, Victoria Island, Lagos, Nigeria",
+      "description": "Savor the flavors of Nigeria's diverse culinary landscape. From spicy jollof rice and aromatic egusi soup to crispy puff-puff and refreshing palm wine, explore traditional dishes that tell stories of Nigeria's regions. Experience authentic cooking methods and family recipes passed down through generations."
+    },
+    {
+      "id": "fashion",
+      "name": "Nigerian Fashion & Textiles",
+      "image": "fashion.webp",
+      "address": "Fashion Designers Association, Abuja, Nigeria",
+      "description": "Discover Nigeria's vibrant fashion scene and traditional textiles. From colorful Ankara fabrics to elegant Aso-oke and modern Afrocentric designs, explore how Nigerian designers blend tradition with contemporary style. Witness the creativity that's putting Nigerian fashion on the global map."
+    },
+    {
+      "id": "festive",
+      "name": "Festivals & Celebrations",
+      "image": "festive.webp",
+      "address": "Calabar Carnival Grounds, Cross River State, Nigeria",
+      "description": "Join Nigeria's most spectacular festivals and celebrations. Experience the energy of Calabar Carnival, the spirituality of Osun Festival, and the grandeur of Durbar celebrations. These vibrant events showcase Nigeria's unity in diversity through music, dance, and cultural expression."
+    },
+    {
+      "id": "games",
+      "name": "Traditional Games & Sports",
+      "image": "games.webp",
+      "address": "National Stadium, Surulere, Lagos, Nigeria",
+      "description": "Explore Nigeria's traditional games and modern sports culture. From ancient board games like Ayo to modern football passion, discover how games bring communities together. Experience local sports traditions and witness the athleticism that produces world-class Nigerian athletes."
+    },
+    {
+      "id": "market",
+      "name": "Local Markets & Commerce",
+      "image": "market.webp",
+      "address": "Balogun Market, Lagos Island, Lagos, Nigeria",
+      "description": "Navigate Nigeria's bustling markets and commercial centers. From the colorful chaos of Balogun Market to the organized stalls of Wuse Market, experience the heartbeat of Nigerian commerce. Discover local products, traditional crafts, and the entrepreneurial spirit that drives Nigeria's economy."
+    },
+    {
+      "id": "places",
+      "name": "Historic Places & Landmarks",
+      "image": "places.webp",
+      "address": "National Theatre, Iganmu, Lagos, Nigeria",
+      "description": "Explore Nigeria's historic landmarks and architectural wonders. From the ancient walls of Kano to the modern skyline of Lagos, discover places that tell Nigeria's story. Visit museums, monuments, and heritage sites that preserve the nation's history and cultural legacy."
+    },
+    {
+      "id": "trips",
+      "name": "Adventure & Nature Trips",
+      "image": "trips.webp",
+      "address": "Yankari National Park, Bauchi State, Nigeria",
+      "description": "Embark on unforgettable adventures across Nigeria's diverse landscapes. From the wildlife of Yankari National Park to the waterfalls of Erin Ijesha, discover Nigeria's natural beauty. Experience eco-tourism, wildlife safaris, and outdoor adventures that showcase Nigeria's environmental treasures."
+    }
+  ]
+}

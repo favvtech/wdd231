@@ -1,0 +1,375 @@
+/* Discover Page Specific Styles - Mobile First (320px to 640px) */
+
+/* Prevent horizontal overflow globally */
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Discover Page Layout */
+.discovery-section {
+  margin-top: var(--space-6);
+  width: 100%;
+}
+
+.discovery-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin: 0 0 var(--space-6);
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* Visitor Message Styles */
+.visitor-message {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-600)
+  );
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  animation: slideInDown 0.5s ease-out;
+}
+
+.visitor-message.hidden {
+  display: none;
+}
+
+#close-visitor-message {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+#close-visitor-message:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#visitor-text {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-right: var(--space-8);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Discovery Grid Layout */
+.discovery-grid {
+  display: grid;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Small screens (320px to 640px) - Single column */
+.discovery-grid {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+/* Discovery Card Styles */
+.discovery-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-xs);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.discovery-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.discovery-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.discovery-card figure {
+  margin: 0 0 var(--space-3);
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.discovery-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for desktop only */
+@media (min-width: 641px) {
+  .discovery-card img:hover {
+    transform: scale(1.05);
+  }
+}
+
+.discovery-card address {
+  font-style: normal;
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.discovery-card p {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.discovery-card .learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+
+.discovery-card .learn-more-btn:hover {
+  background: var(--color-primary-600);
+  transform: translateY(-1px);
+}
+
+.discovery-card .learn-more-btn::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.discovery-card .learn-more-btn:hover::after {
+  transform: translateX(2px);
+}
+
+/* Loading Message */
+.loading-message {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Medium screens (641px to 1024px) - 2 columns */
+@media (min-width: 641px) {
+  .discovery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+    gap: var(--space-5);
+  }
+
+  .discovery-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-8);
+  }
+
+  .visitor-message {
+    padding: var(--space-5);
+    margin-bottom: var(--space-8);
+  }
+
+  #visitor-text {
+    font-size: 1.1rem;
+  }
+
+  .discovery-card {
+    padding: var(--space-5);
+  }
+
+  .discovery-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .discovery-card img {
+    height: 200px;
+  }
+
+  .discovery-card .learn-more-btn {
+    width: auto;
+    padding: var(--space-3) var(--space-5);
+    font-size: 1rem;
+  }
+}
+
+/* Large screens (1025px and above) - 3 columns */
+@media (min-width: 1025px) {
+  .discovery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card5 card6"
+      "card7 card8 .";
+    gap: var(--space-6);
+    max-width: 1200px;
+  }
+
+  .discovery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-10);
+  }
+
+  .visitor-message {
+    padding: var(--space-6);
+    margin-bottom: var(--space-10);
+  }
+
+  #visitor-text {
+    font-size: 1.2rem;
+  }
+
+  .discovery-card {
+    padding: var(--space-6);
+  }
+
+  .discovery-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .discovery-card img {
+    height: 200px;
+  }
+
+  .discovery-card p {
+    font-size: 1rem;
+  }
+
+  .discovery-card .learn-more-btn {
+    padding: var(--space-3) var(--space-6);
+    font-size: 1rem;
+  }
+}
+
+/* Extra large screens (1400px and above) - 4 columns */
+@media (min-width: 1400px) {
+  .discovery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+    gap: var(--space-6);
+  }
+}
+
+/* Container adjustments to prevent horizontal scroll */
+.container {
+  padding: var(--space-4);
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .container {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    padding: var(--space-8);
+    max-width: 1200px;
+  }
+}
+
+/* Ensure no horizontal overflow on all elements */
+.discovery-card,
+.discovery-card figure,
+.discovery-card img,
+.discovery-card .learn-more-btn {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Focus styles for accessibility */
+.discovery-card .learn-more-btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+#close-visitor-message:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .discovery-card,
+  .discovery-card img,
+  .visitor-message,
+  .discovery-card .learn-more-btn {
+    transition: none;
+    animation: none;
+  }
+
+  .discovery-card:hover {
+    transform: none;
+  }
+
+  .discovery-card img:hover {
+    transform: none;
+  }
+}

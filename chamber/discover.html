@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Member Directory | Chamber of Commerce</title>
+    <title>Discover | TravelAll Chamber of Commerce</title>
     <meta
       name="description"
-      content="Explore the Chamber of Commerce member directory to find local businesses, services, and partners in our community."
+      content="Discover the rich culture, cuisine, fashion, festivals, games, markets, places, and trips that make Nigeria a unique destination. Explore our curated collection of Nigerian experiences."
     />
     <meta name="author" content="Favour Igein" />
 
@@ -16,7 +16,7 @@
       type="image/svg+xml"
       href="../images/plane-departure.svg"
     />
-    <link rel="canonical" href="/chamber/directory.html" />
+    <link rel="canonical" href="/chamber/discover.html" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../styles/normalize.css" />
     <link rel="stylesheet" href="../styles/small.css" />
     <link rel="stylesheet" href="./styles/directory.css" />
+    <link rel="stylesheet" href="./styles/discover.css" />
     <link
       rel="stylesheet"
       href="../styles/large.css"
@@ -38,11 +39,11 @@
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
-      content="Member Directory | Chamber of Commerce"
+      content="Discover | TravelAll Chamber of Commerce"
     />
     <meta
       property="og:description"
-      content="Browse our Chamber member directory and connect with local businesses."
+      content="Discover the rich culture, cuisine, fashion, festivals, games, markets, places, and trips that make Nigeria a unique destination."
     />
     <meta
       property="og:image"
@@ -53,13 +54,14 @@
     <meta property="og:image:alt" content="Chamber of Commerce banner" />
     <meta
       property="og:url"
-      content="https://favvtech.github.io/wdd231/chamber/directory.html"
+      content="https://favvtech.github.io/wdd231/chamber/discover.html"
     />
     <script defer src="../scripts/main.js"></script>
-    <script defer src="./scripts/directory.js"></script>
+    <script defer src="./scripts/config.js"></script>
+    <script defer src="./scripts/discover.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#directory">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
       <div class="brand">
         <img src="../images/plane-departure.svg" alt="TravelAll logo" />
@@ -76,45 +78,40 @@
       <nav id="primary-nav" aria-label="Primary Navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html" aria-current="page">Directory</a></li>
+          <li><a href="directory.html">Directory</a></li>
           <li><a href="join.html">Join</a></li>
-          <li><a href="discover.html">Discover</a></li>
+          <li><a href="discover.html" aria-current="page">Discover</a></li>
         </ul>
       </nav>
     </header>
 
-    <div class="container">
-      <div class="directory-header">
-        <div class="directory-controls" role="group" aria-label="View options">
-          <button
-            type="button"
-            id="view-grid"
-            class="btn btn-outline"
-            aria-pressed="true"
-          >
-            Grid
-          </button>
-          <button
-            type="button"
-            id="view-list"
-            class="btn btn-outline"
-            aria-pressed="false"
-          >
-            List
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <main id="directory">
+    <main id="main">
       <div class="container">
-        <h1>Directory</h1>
-        <section
-          id="members"
-          class="directory-container members grid"
-          aria-live="polite"
-          aria-label="Members"
-        ></section>
+        <h1>Discover Nigeria</h1>
+
+        <!-- Visitor Message Area -->
+        <div id="visitor-message" class="visitor-message" aria-live="polite">
+          <button id="close-visitor-message" aria-label="Close visitor message">
+            ×
+          </button>
+          <p id="visitor-text">Loading...</p>
+        </div>
+
+        <!-- Discovery Cards Grid -->
+        <section class="discovery-section" aria-labelledby="discovery-title">
+          <h2 id="discovery-title">Explore Nigerian Experiences</h2>
+          <div
+            id="discovery-grid"
+            class="discovery-grid"
+            role="region"
+            aria-label="Discovery cards"
+          >
+            <!-- Cards will be loaded dynamically via JavaScript -->
+            <div class="loading-message">
+              <p>Loading discovery content...</p>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
