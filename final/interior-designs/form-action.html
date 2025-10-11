@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Favour Igein" />
+    <title>Form Submission - ModernEdge</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E67E22'%3E%3Cpath d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9,22 9,12 15,12 15,22'/%3E%3C/svg%3E"
+    />
+    <style>
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+      }
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: #e67e22;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+      }
+      .success-icon svg {
+        width: 40px;
+        height: 40px;
+        color: white;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+      .subtitle {
+        color: #666;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+      .form-data {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 30px 0;
+        text-align: left;
+      }
+      .form-data h3 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+      .form-field {
+        margin-bottom: 15px;
+      }
+      .form-field strong {
+        color: #e67e22;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-field span {
+        color: #666;
+        font-size: 1.1rem;
+      }
+      .actions {
+        margin-top: 30px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #e67e22;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        margin: 0 10px;
+        transition: background 0.3s ease;
+      }
+      .btn:hover {
+        background: #d35400;
+      }
+      .btn-secondary {
+        background: #6c757d;
+      }
+      .btn-secondary:hover {
+        background: #5a6268;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="success-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"
+          ></path>
+        </svg>
+      </div>
+
+      <h1>Thank You!</h1>
+      <p class="subtitle">
+        Your message has been successfully submitted. We'll get back to you
+        within 24 hours.
+      </p>
+
+      <div class="form-data">
+        <h3>Form Submission Details:</h3>
+        <div class="form-field">
+          <strong>Name:</strong>
+          <span id="submitted-name">[Name will appear here]</span>
+        </div>
+        <div class="form-field">
+          <strong>Email:</strong>
+          <span id="submitted-email">[Email will appear here]</span>
+        </div>
+        <div class="form-field">
+          <strong>Phone:</strong>
+          <span id="submitted-phone">[Phone will appear here]</span>
+        </div>
+        <div class="form-field">
+          <strong>Message:</strong>
+          <span id="submitted-message">[Message will appear here]</span>
+        </div>
+        <div class="form-field">
+          <strong>Submitted:</strong>
+          <span id="submission-time">[Time will appear here]</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="index.html" class="btn">Return Home</a>
+        <a href="contact.html" class="btn btn-secondary"
+          >Send Another Message</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // Display form data from URL parameters or localStorage
+      function displayFormData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const storedData = localStorage.getItem("contactFormData");
+
+        let formData = {};
+
+        // Try to get data from URL parameters first
+        if (urlParams.has("name")) {
+          formData = {
+            name: urlParams.get("name"),
+            email: urlParams.get("email"),
+            phone: urlParams.get("phone"),
+            message: urlParams.get("message"),
+          };
+        } else if (storedData) {
+          // Fallback to localStorage
+          formData = JSON.parse(storedData);
+        }
+
+        // Display the data
+        document.getElementById("submitted-name").textContent =
+          formData.name || "Not provided";
+        document.getElementById("submitted-email").textContent =
+          formData.email || "Not provided";
+        document.getElementById("submitted-phone").textContent =
+          formData.phone || "Not provided";
+        document.getElementById("submitted-message").textContent =
+          formData.message || "Not provided";
+        document.getElementById("submission-time").textContent =
+          new Date().toLocaleString();
+      }
+
+      // Run on page load
+      window.addEventListener("load", displayFormData);
+    </script>
+  </body>
+</html>
